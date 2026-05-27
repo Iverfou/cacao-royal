@@ -98,6 +98,25 @@ a{text-decoration:none;color:inherit}
 .nav-links a.cur{color:var(--gold)}
 
 
+/* ══ COVER ══ */
+#cover{position:relative;height:100vh;overflow:hidden}
+.cover-bg{
+  position:absolute;inset:0;
+  background-image:url('img/cover.jpg');
+  background-size:cover;background-position:center 35%;
+  animation:zoom 10s ease-out forwards;
+}
+@keyframes zoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+.cover-veil{position:absolute;inset:0;background:rgba(10,3,0,.55)}
+.cover-scroll{
+  position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:9px;
+  color:rgba(255,255,255,.4);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;
+  animation:bob 2.5s ease infinite 3.5s;
+}
+.cover-scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,rgba(200,150,62,.5),transparent)}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(9px)}}
+
 /* ══ SHARED ══ */
 section{padding:100px 0}
 .wrap{max-width:1200px;margin:0 auto;padding:0 52px}
@@ -489,6 +508,16 @@ footer{background:var(--deep);padding:54px 0 26px}
     <li><a href="#inversores">Inversores</a></li>
   </ul>
 </nav>
+
+<!-- ══════════════════════ COVER ══════════════════════ -->
+<section id="cover">
+  <div class="cover-bg"></div>
+  <div class="cover-veil"></div>
+  <div class="cover-scroll">
+    <div class="cover-scroll-line"></div>
+    Descender
+  </div>
+</section>
 
 <!-- ══════════════════════ 1 · HISTORIA ══════════════════════ -->
 <section id="historia" style="padding-top:120px">
